@@ -1,5 +1,5 @@
 # Johnny5
-Johnny5 is an irc bot used for cool things. He's based on [Hubot](https://hubot.github.com/).
+Johnny5 is a bot used for cool things. He's based on [Hubot](https://hubot.github.com/).
 
 ## Building
 Builds are automatically done by Docker Hub
@@ -8,10 +8,7 @@ Builds are automatically done by Docker Hub
 ```
 docker run -dt --name johnny5 \
   -p 127.0.0.1:9980:9980\
-  -e HUBOT_IRC_SERVER=irc.example.com \
-  -e HUBOT_IRC_ROOMS=#coolstuff \
-  -e HUBOT_IRC_NICK=Johnny5 \
-  -e HUBOT_IRC_PASSWORD=secrets \
+  -e HUBOT_SLACK_TOKEN=secrets \
   dsfcc/johnny5:latest
 ```
 

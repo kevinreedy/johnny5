@@ -32,15 +32,14 @@ WORKDIR /app
 RUN hubot --create johnny5
 WORKDIR /app/johnny5
 
-# Install hubot-irc
-RUN npm install hubot-irc --save && npm install
+# Install hubot-slack
+RUN npm install hubot-slack --save && npm install
 
 # Set Hubot Options
-ENV HUBOT_IRC_UNFLOOD true
 
 # HTTP Listener listen port 9980
 ENV PORT 9980
 EXPOSE 9980
 
 # Run Hubot
-ENTRYPOINT ["bin/hubot", "-a", "irc"]
+ENTRYPOINT ["bin/hubot", "-a", "slack"]

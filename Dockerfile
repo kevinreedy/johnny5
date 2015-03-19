@@ -41,5 +41,14 @@ RUN npm install hubot-slack --save && npm install
 ENV PORT 9980
 EXPOSE 9980
 
+# Add Scripts
+RUN npm install hubot-devops-reactions --save \
+ && npm install hubot-plusplus --save \
+ && npm install hubot-redis-brain --save \
+ && npm install
+
+ADD external-scripts.json /app/johnny5/external-scripts.json
+ADD hubot-scripts.json /app/johnny5/hubot-scripts.json
+
 # Run Hubot
 ENTRYPOINT ["bin/hubot", "-a", "slack"]
